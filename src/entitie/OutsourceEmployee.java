@@ -1,11 +1,11 @@
 package entitie;
 
-public class OutsourceEmployee extends Employee {
+public class OutsourceEmployee extends Employee{
 
     private Double additionalCharge;
 
-    public OutsourceEmployee() {
-        super();
+    public OutsourceEmployee(){
+
     }
 
     public OutsourceEmployee(String name, Integer hours, Double valuePerHour, Double additionalCharge) {
@@ -22,9 +22,8 @@ public class OutsourceEmployee extends Employee {
     }
 
     @Override
-    public double payment() {
+    public double payment(){
         return super.payment() + additionalCharge * 1.1;
-
     }
 }
 

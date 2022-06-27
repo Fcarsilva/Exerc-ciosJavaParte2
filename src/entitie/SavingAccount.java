@@ -1,9 +1,10 @@
 package entitie;
 
-public class SavingAccount extends Account{
+public class SavingAccount extends Account {
+
     private Double interestRate;
 
-    public SavingAccount(){
+    public SavingAccount() {
         super();
     }
 
@@ -20,7 +21,7 @@ public class SavingAccount extends Account{
         this.interestRate = interestRate;
     }
 
-    public void  updateBalance(){
+    public void updateBalance(){
         balance += balance * interestRate;
     }
 

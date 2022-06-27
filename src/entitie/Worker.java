@@ -7,14 +7,18 @@ import java.util.Calendar;
 import java.util.List;
 
 public class Worker {
+
     private String name;
     private WorkerLevel level;
     private Double baseSalary;
 
-    private Department department;
-    private List<HourContract> contracts = new ArrayList<>();
 
-    public  Worker(){
+    private Department department;
+    private List<HourContratc> contratcs = new ArrayList<>();
+
+
+    public Worker() {
+
     }
 
     public Worker(String name, WorkerLevel level, Double baseSalary, Department department) {
@@ -56,32 +60,34 @@ public class Worker {
         this.department = department;
     }
 
-    public List<HourContract> getContracts() {
-        return contracts;
+    public List<HourContratc> getContratcs() {
+        return contratcs;
     }
 
-    public void addContract(HourContract contract){
-        contracts.add(contract);
+
+    public void addContract(HourContratc contratc) {
+        contratcs.add(contratc);
+    }
+
+    public void removeContract(HourContratc contratc) {
+        contratcs.remove(contratc);
 
     }
-    public void removeContract(HourContract contract){
-        contracts.remove(contract);
-    }
-    public double income(int year, int month){
+    public double income(int year, int month) {
         double sum = baseSalary;
-        Calendar cal = Calendar.getInstance();
 
-        for(HourContract c : contracts){
+        Calendar cal =  Calendar.getInstance();
+        for (HourContratc c : contratcs) {
             cal.setTime(c.getDate());
-            int c_year =cal.get(Calendar.YEAR);
+            int c_year = cal.get(Calendar.YEAR);
             int c_month = 1 + cal.get(Calendar.MONTH);
-            if (year == c_year && month == c_month) {
+
+            if (year == c_year && month == c_month){
                 sum += c.totalValue();
             }
+
         }
-        return  sum;
+        return sum;
     }
+
 }
-
-
-

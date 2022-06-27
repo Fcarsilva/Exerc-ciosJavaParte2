@@ -1,11 +1,11 @@
 package entitie;
 
 public class Employee {
-    private String name;
+    private  String name;
     private Integer hours;
     private Double valuePerHour;
 
-    public  Employee(){
+    public Employee(){
 
     }
 
@@ -41,6 +41,6 @@ public class Employee {
 
     public double payment(){
         return hours * valuePerHour;
-
     }
+
 }
